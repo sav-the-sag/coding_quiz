@@ -1,1 +1,10 @@
-/* center text */
+/* add flex to the body */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* center text in quizcontainer class */
+.quizcontainer {
+    text-align: center;
+}
