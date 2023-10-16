@@ -8,3 +8,8 @@ body {
 .quizcontainer {
     text-align: center;
 }
+
+/* center text in quiz class */
+.quiz {
+    text-align: center;
+}
