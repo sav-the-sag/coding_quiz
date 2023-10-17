@@ -1,6 +1,10 @@
-// make a variable for each option //
+// make a variable for the question, options //
 
-var option1 = document.querySelector("#option1")
+var question = document.getElementById("question");
+var option = Array.from(document.getElementsByClassName("option"));
+var currentQuestion = {};
+var acceptingAnswers = false;
+var availableQuestions = [];
 
 
 var currentIndex = 0
@@ -26,7 +30,6 @@ function setTime() {
 
 var questions = [
     {
-        id: 1,
         question: "What does HTML stand for?",
         answer: "Hypertext Markup Language",
         option: [
@@ -35,7 +38,33 @@ var questions = [
             "Hypertext Makeup Language"
         ]
     },
+    {
+        question: "Inside which HTML element do we put the Javascript?",
+        answer: "<script>",
+        option: [
+            "<js>",
+            "<javascript>",
+            "<script>"
+        ]
+    },
+    {
+        question: "What does CSS stand for?",
+        answer: "Cascading Style Sheets",
+        option: [
+            "Cascading Style Sheets",
+            "Colorful Style Sheets",
+            "Computer Style Sheets"
+        ]
+    },
+    {
+        question: "How can you make a bulleted list?",
+        answer: "<ul>",
+        option: [
+            "<ol>",
+            "<ul>",
+            "<list>"
+        ]
 
-
+    }
 ]
 
