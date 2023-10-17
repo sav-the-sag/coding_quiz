@@ -1,33 +1,14 @@
-// make a variable for the question, options //
+// make a variable for the question, options, timer //
 
 var question = document.getElementById("question");
-var option = Array.from(document.getElementsByClassName("option"));
-var currentQuestion = {};
-var acceptingAnswers = false;
-var availableQuestions = [];
+var optionsEl = document.querySelector(".btn-group-vertical");
+var questionText = question.querySelector("h2");
+console.log(questionText);
 
-
-var currentIndex = 0
-
-// add a timer //
 var timeEl = document.querySelector(".time");
 var secondsLeft = 60;
 
-function setTime() {
-  // Set interval in variable
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft;
-
-    if(secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-    }
-
-  }, 1000);
-}
-// add a variable for questions //
-
+var currentIndex = 0
 var questions = [
     {
         question: "What does HTML stand for?",
@@ -66,4 +47,30 @@ var questions = [
         ]
 
     }
-]
+];
+// add a timer //
+
+function setTime() {
+  // Set interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+    }
+
+  }, 1000);
+}
+
+// make a function for updating question //
+function newQuestion() {
+    questionText.textContent = questions[currentIndex].question;
+    questions[currentIndex].option.forEach(option => {
+        optionsEl.append(option);
+    })
+}
+setTime();
+
+newQuestion();
