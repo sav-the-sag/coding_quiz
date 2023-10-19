@@ -67,10 +67,16 @@ function setTime() {
 // make a function for updating question //
 function newQuestion() {
     questionText.textContent = questions[currentIndex].question;
-    questions[currentIndex].option.forEach(option => {
-        optionsEl.append(option);
-    })
+    //questions[currentIndex].option.forEach(option => {
+        //optionsEl.append(option);
+    //})
+    if (secondsLeft === 0) {
+        localStorage.setItem("mostRecentScore", secondsLeft);
+        //go to highscores page
+        return window.location.assign("/highscores.html");
+    }
 }
 setTime();
 
 newQuestion();
+
