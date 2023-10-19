@@ -79,4 +79,3 @@ function newQuestion() {
 setTime();
 
 newQuestion();
-
